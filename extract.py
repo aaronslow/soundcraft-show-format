@@ -25,7 +25,7 @@ args = parser.parse_args()
 for file in args.infiles:
     print("Processing " + file.name + ", ", end="")
 
-    soup = BeautifulSoup(file, features='xml')
+    soup = BeautifulSoup(file, features='lxml-xml')
     collection = soup('MHxDFile')
     size = len(collection)
     outfilepath = basename(file.name)
